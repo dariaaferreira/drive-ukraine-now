@@ -34,9 +34,7 @@ const AdvertListItem = ({ advert, index }) => {
       </DivContainer>
 
       <Button onClick={openModal}>Learn More</Button>
-      <Modal isOpen={isModalOpen} onClose={closeModal}>
-
-      </Modal>
+      <Modal isOpen={isModalOpen} onClose={closeModal}></Modal>
 
     </Item>
   );
