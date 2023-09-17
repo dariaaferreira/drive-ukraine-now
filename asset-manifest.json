@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/drive-ukraine-now/static/css/main.e6c13ad2.css",
+    "main.js": "/drive-ukraine-now/static/js/main.6d1c9a76.js",
+    "static/js/544.16b2d02a.chunk.js": "/drive-ukraine-now/static/js/544.16b2d02a.chunk.js",
+    "static/js/424.2ddd3ec7.chunk.js": "/drive-ukraine-now/static/js/424.2ddd3ec7.chunk.js",
+    "static/js/733.dba7e637.chunk.js": "/drive-ukraine-now/static/js/733.dba7e637.chunk.js",
+    "static/media/Inter-Medium.ttf": "/drive-ukraine-now/static/media/Inter-Medium.6dcbc9bed1ec438907ee.ttf",
+    "static/media/Manrope-SemiBold.otf": "/drive-ukraine-now/static/media/Manrope-SemiBold.280ef7a596a9cd6aeb25.otf",
+    "static/media/Manrope-Regular.otf": "/drive-ukraine-now/static/media/Manrope-Regular.d8bf9c01fa3ff12964af.otf",
+    "static/media/Manrope-Medium.otf": "/drive-ukraine-now/static/media/Manrope-Medium.816019219d026d1bd357.otf",
+    "static/media/Manrope-Thin.otf": "/drive-ukraine-now/static/media/Manrope-Thin.e7946a022358599f8959.otf",
+    "index.html": "/drive-ukraine-now/index.html",
+    "main.e6c13ad2.css.map": "/drive-ukraine-now/static/css/main.e6c13ad2.css.map",
+    "main.6d1c9a76.js.map": "/drive-ukraine-now/static/js/main.6d1c9a76.js.map",
+    "544.16b2d02a.chunk.js.map": "/drive-ukraine-now/static/js/544.16b2d02a.chunk.js.map",
+    "424.2ddd3ec7.chunk.js.map": "/drive-ukraine-now/static/js/424.2ddd3ec7.chunk.js.map",
+    "733.dba7e637.chunk.js.map": "/drive-ukraine-now/static/js/733.dba7e637.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.6d1c9a76.js"
+  ]
+}
