@@ -1,17 +1,17 @@
 import React, { lazy, Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+import Header from "../Header/Header";
 import Loader from "../Loader/Loader";
-// import Header from '../Header/Header';
 import { LoaderContainer } from './App.styled';
 
 const Home = lazy(() => import("../../pages/Home"));
-const Catalog = lazy(() => import("../../pages/Catalog"));
+const Catalog = lazy(() => import("../../pages/Catalog/Catalog"));
 const Favorites = lazy(() => import("../../pages/Favorites"));
 
 const App = () => {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <Suspense fallback={<LoaderContainer><Loader /></LoaderContainer>}>
         <Routes>
           <Route path="/" element={<Home />} />

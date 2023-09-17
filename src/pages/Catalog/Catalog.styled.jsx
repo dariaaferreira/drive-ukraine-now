@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
 
-export const LoaderContainer = styled.div`
+export const CatalogContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  max-width: 1184px;
+  margin: 0 auto;
 `;
