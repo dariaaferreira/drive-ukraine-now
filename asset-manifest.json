@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/drive-ukraine-now/static/css/main.e6c13ad2.css",
-    "main.js": "/drive-ukraine-now/static/js/main.dd041657.js",
+    "main.js": "/drive-ukraine-now/static/js/main.f129268b.js",
     "static/css/362.86ccd550.chunk.css": "/drive-ukraine-now/static/css/362.86ccd550.chunk.css",
     "static/js/362.01d81c92.chunk.js": "/drive-ukraine-now/static/js/362.01d81c92.chunk.js",
-    "static/js/53.d733dbdf.chunk.js": "/drive-ukraine-now/static/js/53.d733dbdf.chunk.js",
+    "static/js/53.fb925103.chunk.js": "/drive-ukraine-now/static/js/53.fb925103.chunk.js",
     "static/js/733.139a5f08.chunk.js": "/drive-ukraine-now/static/js/733.139a5f08.chunk.js",
     "static/js/113.c7d26bae.chunk.js": "/drive-ukraine-now/static/js/113.c7d26bae.chunk.js",
     "static/media/Inter-Medium.ttf": "/drive-ukraine-now/static/media/Inter-Medium.6dcbc9bed1ec438907ee.ttf",
@@ -20,15 +20,15 @@
     "static/media/slick.woff": "/drive-ukraine-now/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/drive-ukraine-now/index.html",
     "main.e6c13ad2.css.map": "/drive-ukraine-now/static/css/main.e6c13ad2.css.map",
-    "main.dd041657.js.map": "/drive-ukraine-now/static/js/main.dd041657.js.map",
+    "main.f129268b.js.map": "/drive-ukraine-now/static/js/main.f129268b.js.map",
     "362.86ccd550.chunk.css.map": "/drive-ukraine-now/static/css/362.86ccd550.chunk.css.map",
     "362.01d81c92.chunk.js.map": "/drive-ukraine-now/static/js/362.01d81c92.chunk.js.map",
-    "53.d733dbdf.chunk.js.map": "/drive-ukraine-now/static/js/53.d733dbdf.chunk.js.map",
+    "53.fb925103.chunk.js.map": "/drive-ukraine-now/static/js/53.fb925103.chunk.js.map",
     "733.139a5f08.chunk.js.map": "/drive-ukraine-now/static/js/733.139a5f08.chunk.js.map",
     "113.c7d26bae.chunk.js.map": "/drive-ukraine-now/static/js/113.c7d26bae.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.dd041657.js"
+    "static/js/main.f129268b.js"
   ]
 }
