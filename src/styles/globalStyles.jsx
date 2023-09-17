@@ -4,6 +4,8 @@ import ManropeMedium from '../fonts/Manrope-Medium.otf';
 import ManropeSemiBold from '../fonts/Manrope-SemiBold.otf';
 import InterMedium from '../fonts/Inter-Medium.ttf';
 import ManropeThin from '../fonts/Manrope-Thin.otf';
+import MontserratRegular from '../fonts/Montserrat-Regular.otf';
+import MontserratSemiBold from '../fonts/Montserrat-SemiBold.otf';
 
 const GlobalStyle = createGlobalStyle`
     @font-face {
@@ -43,6 +45,22 @@ const GlobalStyle = createGlobalStyle`
         src: local('InterMedium'),
         url(${InterMedium}) format('truetype');
         font-weight: 500;
+        font-style: normal;
+    }    
+
+    @font-face {
+        font-family: 'MontserratSemiBold';
+        src: local('MontserratSemiBold'),
+        url(${MontserratSemiBold}) format('truetype');
+        font-weight: 600;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'MontserratRegular';
+        src: local('MontserratRegular'),
+        url(${MontserratRegular}) format('truetype');
+        font-weight: 400;
         font-style: normal;
     }    
 

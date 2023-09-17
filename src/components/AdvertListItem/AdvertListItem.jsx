@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Div, DivContainer, Img, Item, Span, Title, SpanPrice } from './AdvertListItem.styled';
+import { Button, Descr, DescrContainer, Img, Item, Span, Title, SpanPrice } from './AdvertListItem.styled';
 import Modal from '../Modal/Modal';
 
 const AdvertListItem = ({ advert, index }) => {
@@ -27,15 +27,15 @@ const AdvertListItem = ({ advert, index }) => {
         {advert.make}{shouldDisplaySpan && <Span> {advert.model}</Span>}, {advert.year} <SpanPrice>{advert.rentalPrice}</SpanPrice>
       </Title>
 
-      <DivContainer>
-        <Div>
+      <DescrContainer>
+        <Descr>
         {lastTwoWords} | {advert.rentalCompany} | {advert.type} | {advert.make} | {advert.mileage} | {firstFunctionality}
-        </Div>
-      </DivContainer>
+        </Descr>
+      </DescrContainer>
 
-      <Button onClick={openModal}>Learn More</Button>
-      <Modal isOpen={isModalOpen} onClose={closeModal}></Modal>
-
+      <Button onClick={() => openModal(advert.id)}>Learn More</Button>
+      <Modal isOpen={isModalOpen} onClose={closeModal} id={advert.id} advert={advert}></Modal>
+      
     </Item>
   );
 };

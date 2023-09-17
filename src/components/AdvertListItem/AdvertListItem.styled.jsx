@@ -32,11 +32,11 @@ export const Img = styled.img`
   background: linear-gradient(180deg, rgba(18, 20, 23, 0.5) 2.5%, rgba(18, 20, 23, 0) 41.07%);
 `;
 
-export const DivContainer = styled.div`
+export const DescrContainer = styled.div`
   display: flex;
 `;
 
-export const Div = styled.h4`
+export const Descr = styled.h4`
   display: flex;
   font-size: 12px;
   line-height: 1.5em;
