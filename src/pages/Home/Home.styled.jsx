@@ -71,11 +71,13 @@ export const LearnMoreButton = styled.button`
   background-color: #007bff;
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 8px 20px;
   font-size: 18px;
   cursor: pointer;
+  border-radius: 4px;
   transition: background-color 0.3s;
   margin-bottom: 20px;
+  font-family: ManropeThin;
   
   &:hover {
     background-color: #0056b3;
