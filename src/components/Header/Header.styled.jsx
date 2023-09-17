@@ -16,10 +16,11 @@ export const NavContainer = styled.header`
 `;
 
 export const Container = styled.div`
- display: flex;
- width: 1187px;
- margin: 0 auto;
- gap: 30px;
+  display: flex;
+  width: 1187px;
+  margin: 0 auto;
+  gap: 30px;
+  padding-left: 20px;
 `;
 
 export const NavList = styled.ul`
