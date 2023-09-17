@@ -4,9 +4,9 @@ import Header from "../Header/Header";
 import Loader from "../Loader/Loader";
 import { LoaderContainer } from './App.styled';
 
-const Home = lazy(() => import("../../pages/Home"));
+const Home = lazy(() => import("../../pages/Home/Home"));
 const Catalog = lazy(() => import("../../pages/Catalog/Catalog"));
-const Favorites = lazy(() => import("../../pages/Favorites"));
+const Favorites = lazy(() => import("../../pages/Favorites/Favorites"));
 
 const App = () => {
   return (
