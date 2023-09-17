@@ -54,12 +54,19 @@ export const AdvDescr = styled.p`
   width: 420px;
 `;
 
+export const FuncDescr = styled.p`
+  font-size: 14px;
+  line-height: 20px;
+  font-family: ManropeRegular;
+  font-weight: 400;
+  width: 350px;
+`;
+
 export const ConditionDescr = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 `;
-
 
 export const DescrTitle = styled.h3`
   display: flex;
@@ -87,7 +94,6 @@ export const ConditionContainer = styled.div`
   width: 461px;
 `;
 
-
 export const ConditionUnit= styled.p`
   font-size: 12px;
   color: rgba(54, 53, 53, 1);
@@ -104,7 +110,6 @@ export const SpanUnit= styled.span`
   font-family: MontserratSemiBold;
   font-weight: 600;
 `;
-
 
 export const Descr = styled.p`
   display: flex;

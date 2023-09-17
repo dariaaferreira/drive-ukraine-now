@@ -1,19 +1,20 @@
 import React from 'react';
 import { SpanUnit, 
-    ConditionContainer, 
-    ConditionUnit, 
-    ConditionDescr, 
-    DescrTitle, 
-    AdvDescr, 
-    ImgContainer, 
-    Descr, 
-    DescrContainer, 
-    InfoContainer, 
-    Img, 
-    Span, 
-    Title, 
-    Button, 
-    ButtonLink
+  ConditionContainer, 
+  ConditionUnit, 
+  ConditionDescr, 
+  DescrTitle, 
+  AdvDescr, 
+  ImgContainer, 
+  Descr, 
+  DescrContainer, 
+  InfoContainer, 
+  Img, 
+  Span, 
+  Title, 
+  Button, 
+  ButtonLink,
+  FuncDescr
 } from './CarInfo.styled';
 
 const CarInfo = ({ advert }) => {
@@ -60,12 +61,12 @@ const CarInfo = ({ advert }) => {
 
         <AdvDescr>{advert.description}</AdvDescr>
 
-        <DescrContainer>
+        <FuncDescr>
           <DescrTitle>Accessories and functionalities:</DescrTitle>
-          <Descr>
-            {advert.accessories.join(" | ")} | {advert.functionalities.join(" | ")}
+            <Descr>
+              {advert.accessories.join(" | ")} | {advert.functionalities.join(" | ")}
           </Descr>
-        </DescrContainer>
+        </FuncDescr>
         
         <ConditionContainer>
           <DescrTitle>Rental Conditions:</DescrTitle>
