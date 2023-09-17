@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkdrive_ukraine_now=self.webpackChunkdrive_ukraine_now||[]).push([[733],{3733:function(e,n,r){r.r(n);r(2791);var i=r(184);n.default=function(){return(0,i.jsx)("div",{children:(0,i.jsx)("h1",{children:"Favorites page"})})}}}]);
+//# sourceMappingURL=733.139a5f08.chunk.js.map
