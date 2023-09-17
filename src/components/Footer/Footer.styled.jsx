@@ -75,6 +75,7 @@ export const SubscribeContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+  width: 650px;
 `;
 
 export const SubscribeTitle = styled.p`
@@ -119,3 +120,14 @@ export const SubscribeButton = styled.button`
     background-color: #0056b3;
   }
 `;
+
+export const ErrorMessage = styled.div`
+  color: red;
+  font-size: 12px;
+`;
+
+export const SuccessMesage = styled.div`
+  color: green;
+  font-size: 12px;
+`;
+
