@@ -8,13 +8,11 @@ export const Container = styled.div`
 
 export const ListItems = styled.ul`
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
   grid-gap: 29px;
   margin-top: 30px;
   margin-bottom: 20px;
-  padding: 0;
-  list-style: none;
 `;
 
 export const LoadMoreButton = styled.button`

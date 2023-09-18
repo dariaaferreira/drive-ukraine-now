@@ -6,13 +6,13 @@ import { Container, ListItems, LoadMoreButton } from './AdvertList.styled';
 import AdvertListItem from '../AdvertListItem/AdvertListItem';
 import Loader from '../Loader/Loader';
 
-const AdvertList = () => {
+const AdvertList = ({ filteredAdverts }) => {
   const dispatch = useDispatch();
   const adverts = useSelector(getAdverts);
   const [displayedAdverts, setDisplayedAdverts] = useState([]);
   const [startIndex, setStartIndex] = useState(0);
   const itemsPerPage = 8;
-  const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     dispatch(fetchAdverts());
@@ -25,28 +25,38 @@ const AdvertList = () => {
   }, [adverts, startIndex]);
 
   const loadMore = () => {
-    setLoading(true); 
+    setLoading(true);
     setTimeout(() => {
       setStartIndex(startIndex + itemsPerPage);
-      setLoading(false); 
-    }, 1000); 
+      setLoading(false);
+    }, 1000);
   };
 
-  if (!adverts || adverts.length === 0) {
+  if (loading) {
     return <Loader />;
   }
+
+  const hasFilteredAdverts = filteredAdverts && filteredAdverts.length > 0;
+
+  // console.log(filteredAdverts);
+  // console.log(displayedAdverts);
 
   return (
     <Container>
       <ListItems>
-        {displayedAdverts.map((advert, index) => (
-          <AdvertListItem key={advert.id} advert={advert} index={index} />
-        ))}
+        {hasFilteredAdverts
+          ? 
+            filteredAdverts.map((advert, index) => (
+              <AdvertListItem key={advert.id} advert={advert} index={index} />
+            ))
+          : 
+            displayedAdverts.map((advert, index) => (
+              <AdvertListItem key={advert.id} advert={advert} index={index} />
+            ))}
       </ListItems>
       {!loading && displayedAdverts.length < adverts.length && (
         <LoadMoreButton onClick={loadMore}>Load more</LoadMoreButton>
       )}
-      {loading && <Loader />}
     </Container>
   );
 };

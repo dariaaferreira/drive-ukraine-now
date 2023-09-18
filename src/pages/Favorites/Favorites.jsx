@@ -2,7 +2,7 @@ import AdvertListItem from 'components/AdvertListItem/AdvertListItem';
 import React from 'react';
 import { Container } from './Favorites.styled';
 import { useSelector } from 'react-redux';
-// import Footer from 'components/Footer/Footer';
+import Footer from 'components/Footer/Footer';
 
 const Favorites = () => {
   const favorites = useSelector((state) => state.favorites.favorites);
@@ -16,7 +16,7 @@ const Favorites = () => {
           </div>
         ))}
       </Container>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

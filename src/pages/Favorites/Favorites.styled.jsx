@@ -4,9 +4,11 @@ import styled from '@emotion/styled';
 export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  min-height: 64vh;
+  grid-gap: 29px;
+  padding-top: 30px;
+  padding-bottom: 20px;
   max-width: 1184px;
-  padding: 50px;
   margin: 0 auto;
 `;
 
@@ -83,7 +85,6 @@ export const Button = styled.button`
   border: none;
 
   &:hover, &:focus {
-      fill: var(--white-color);
   background-color: #2196F3;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }

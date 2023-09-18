@@ -74,7 +74,6 @@ export const Button = styled.button`
   border: none;
 
   &:hover, &:focus {
-      fill: var(--white-color);
   background-color: #2196F3;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
