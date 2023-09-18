@@ -133,7 +133,7 @@ export const Button = styled.button`
   border: none;
 
   &:hover, &:focus {
-  background-color: #2196F3;
+  background-color: rgba(11, 68, 205, 1);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 `;

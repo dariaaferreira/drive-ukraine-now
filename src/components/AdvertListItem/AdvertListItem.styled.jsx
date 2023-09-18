@@ -68,13 +68,13 @@ export const Button = styled.button`
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 10px;
-  background: #3470FF;
+  background: rgba(52, 112, 255, 1);
   color: white;
   cursor: pointer;
   border: none;
 
   &:hover, &:focus {
-  background-color: #2196F3;
+  background-color: rgba(11, 68, 205, 1);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 `;

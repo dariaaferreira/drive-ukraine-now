@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'ManropeThin';
         src: local('ManropeThin'),
         url(${ManropeThin}) format('truetype');
-        font-weight: 400;
+        font-weight: 100;
         font-style: normal;
     }
 

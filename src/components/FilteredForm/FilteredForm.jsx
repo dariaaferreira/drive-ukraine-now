@@ -1,5 +1,15 @@
 import React, { useState } from 'react';
-import { Container } from './FilteredForm.styled';
+import Select from 'react-select'; 
+import {
+  Button, 
+  Container, 
+  Form, 
+  InputContainer, 
+  InputLeft, 
+  InputRight, 
+  Label,
+  SelectContainer, 
+} from './FilteredForm.styled';
 
 const FilteredForm = ({
   makes,
@@ -38,62 +48,151 @@ const FilteredForm = ({
     onFilterChange(newFilters);
   };
 
-  console.log("priceRanges: ", priceRanges);
-  console.log("prices: ", prices);
+  const makeOptions = makes.map((make) => ({ value: make, label: make }));
+  const priceOptions = prices.map((price) => ({ value: price, label: price }));
 
   return (
     <Container>
-      <select
-        value={selectedMake}
-        onChange={(e) => setSelectedMake(e.target.value)}
-      >
-        <option value="">Enter the text</option>
-        {makes.map((make) => (
-          <option key={make} value={make}>
-            {make}
-          </option>
-        ))}
-      </select>
-
-      <select
-        value={selectedPrice}
-        onChange={(e) => {
-          setSelectedPrice(e.target.value);
-          const selectedPriceRange = priceRanges.find((range) => range <= e.target.value);
-          setSelectedPriceRange(selectedPriceRange);
-        }}
-      >
-        <option value="">To $</option>
-        {prices.map((price) => (
-          <option key={price} value={price}>
-            {price}
-          </option>
-        ))}
-      </select>
-
-
-      <div>
-        <input
-          type="number"
-          placeholder="From"
-          min={minMileageRounded}
-          max={maxMileageRounded}
-          step={100}
-          value={minValue}
-          onChange={handleMinInputChange}
+      <SelectContainer>
+        <Label htmlFor="nameSelect">Car brand</Label>
+        
+        <Select
+          id="nameSelect"
+          placeholder="Enter the text"
+          value={selectedMake} 
+          onChange={(selectedOption) => setSelectedMake(selectedOption.value)} 
+          options={makeOptions}
+          styles={{ 
+            control: (styles) => ({
+              ...styles,
+              width: '224px', 
+              height: '48px',
+              borderColor: 'rgba(18, 20, 23, 0.2)', 
+              border: 'none',
+              borderRadius: '14px',
+              padding: '8px',
+              fontSize: '16px',
+              fontFamily: 'ManropeMedium',
+              backgroundColor: 'rgba(247, 247, 251, 1)',
+              appearance: 'none',
+            }),
+            option: (styles) => {
+              return {
+              ...styles,
+              color: 'rgba(18, 20, 23, 0.2)',
+              fontFamily: 'ManropeMedium',
+            };
+            },
+            menuList: (base) => ({
+              ...base,
+              "::-webkit-scrollbar": {
+                width: "9px"
+              },
+              "::-webkit-scrollbar-track": {
+                background: "rgba(18, 20, 23, 0.05)"
+              },
+              "::-webkit-scrollbar-thumb": {
+                background: "rgba(18, 20, 23, 0.05)"
+              },
+              "::-webkit-scrollbar-thumb:hover": {
+                background: "rgba(18, 20, 23, 0.05)"
+              }
+            }),
+            placeholder: (styles) => ({
+              ...styles,
+              color: 'rgba(18, 20, 23, 1)',
+            }),
+          }}
+          components={{
+            IndicatorSeparator: () => null,
+          }}
         />
-        <input
-          type="number"
-          placeholder="To"
-          min={minMileageRounded}
-          max={maxMileageRounded}
-          step={100}
-          value={maxValue}
-          onChange={handleMaxInputChange}
-        />
-      </div>
+      </SelectContainer>
 
-      <button onClick={handleFilterClick}>Search</button>
+      <SelectContainer>
+        <Label htmlFor="priceSelect">Price/ 1 hour</Label>
+        <Select
+          id="priceSelect"
+          placeholder="To $"
+          value={selectedPrice} 
+          onChange={(selectedOption) => {
+            setSelectedPrice(selectedOption); 
+            const selectedPriceRange = priceRanges.find((range) => range <= selectedOption.value);
+            setSelectedPriceRange(selectedPriceRange);
+          }}
+          options={priceOptions}
+          styles={{ 
+            control: (styles) => ({
+              ...styles,
+              width: '125', 
+              height: '48px',
+              borderColor: 'rgba(18, 20, 23, 0.2)', 
+              border: 'none',
+              borderRadius: '14px',
+              padding: '8px',
+              fontSize: '16px',
+              fontFamily: 'ManropeMedium',
+              backgroundColor: 'rgba(247, 247, 251, 1)',
+              appearance: 'none',
+            }),
+            option: (styles) => {
+              return {
+              ...styles,
+              color: 'rgba(18, 20, 23, 0.2)',
+              fontFamily: 'ManropeMedium',
+            };
+            },
+            menuList: (base) => ({
+              ...base,
+              "::-webkit-scrollbar": {
+                width: "9px"
+              },
+              "::-webkit-scrollbar-track": {
+                background: "rgba(18, 20, 23, 0.05)"
+              },
+              "::-webkit-scrollbar-thumb": {
+                background: "rgba(18, 20, 23, 0.05)"
+              },
+              "::-webkit-scrollbar-thumb:hover": {
+                background: "rgba(18, 20, 23, 0.05)"
+              }
+            }),
+            placeholder: (styles) => ({
+              ...styles,
+              color: 'rgba(18, 20, 23, 1)',
+            }),
+          }}
+          components={{
+            IndicatorSeparator: () => null,
+          }}
+        />
+      </SelectContainer>
+
+      <Form>
+        <Label>Car mileage / km</Label> 
+        <InputContainer>
+          <InputLeft
+            type="number"
+            placeholder="From"
+            min={minMileageRounded}
+            max={maxMileageRounded}
+            step={100}
+            value={minValue}
+            onChange={handleMinInputChange}
+          />
+          <InputRight
+            type="number"
+            placeholder="To"
+            min={minMileageRounded}
+            max={maxMileageRounded}
+            step={100}
+            value={maxValue}
+            onChange={handleMaxInputChange}
+          />
+        </InputContainer>
+      </Form>
+
+      <Button onClick={handleFilterClick}>Search</Button>
     </Container>
   );
 };
