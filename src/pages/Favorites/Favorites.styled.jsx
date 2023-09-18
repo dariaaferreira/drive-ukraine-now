@@ -1,6 +1,15 @@
 import { ReactComponent as Icon } from '../../images/icon.svg';
 import styled from '@emotion/styled';
 
+export const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1184px;
+  padding: 50px;
+  margin: 0 auto;
+`;
+
 export const ImageContainer = styled.div`
   position: relative;
 `;

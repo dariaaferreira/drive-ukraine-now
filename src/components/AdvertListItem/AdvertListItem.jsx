@@ -1,9 +1,23 @@
-import React, { useState } from 'react';
-import { Button, Descr, DescrContainer, Img, Item, Span, Title, SpanPrice } from './AdvertListItem.styled';
+import React, { useEffect, useState } from 'react';
+import { HeartIcon, 
+  Button, 
+  Descr, 
+  DescrContainer, 
+  Img, 
+  Item, 
+  Span, 
+  Title, 
+  SpanPrice, 
+  ImageContainer 
+} from './AdvertListItem.styled';
 import Modal from '../Modal/Modal';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToFavorites, removeFromFavorites } from 'redux/favorites/slice';
+
 
 const AdvertListItem = ({ advert, index }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -20,9 +34,37 @@ const AdvertListItem = ({ advert, index }) => {
 
   const firstFunctionality = advert.functionalities[0];
 
+  const dispatch = useDispatch();
+  
+  const favorites = useSelector((state) => state.favorites.favorites);
+
+  useEffect(() => {
+    const isAlreadyFavorite = favorites.some((favorite) => favorite.id === advert.id);
+    setIsFavorite(isAlreadyFavorite);
+  }, [favorites, advert]);
+
+  const toggleFavorite = () => {
+    if (isFavorite) {
+      dispatch(removeFromFavorites(advert.id));
+    } else {
+      dispatch(addToFavorites(advert));
+    }
+    setIsFavorite(!isFavorite);
+  };
+
   return (
     <Item>
-      <Img src={advert.img} alt={advert.make} />
+      <ImageContainer>
+        <Img src={advert.img} alt={advert.make} />
+        <HeartIcon
+          onClick={toggleFavorite}
+          style={{
+            fill: isFavorite ? 'rgba(52, 112, 255, 1)' : 'transparent',
+            stroke: isFavorite ? 'rgba(52, 112, 255, 1)' : 'white',
+          }}
+        />
+      </ImageContainer>
+      
       <Title>
         {advert.make}{shouldDisplaySpan && <Span> {advert.model}</Span>}, {advert.year} <SpanPrice>{advert.rentalPrice}</SpanPrice>
       </Title>
@@ -35,7 +77,6 @@ const AdvertListItem = ({ advert, index }) => {
 
       <Button onClick={() => openModal(advert.id)}>Learn More</Button>
       <Modal isOpen={isModalOpen} onClose={closeModal} id={advert.id} advert={advert}></Modal>
-      
     </Item>
   );
 };

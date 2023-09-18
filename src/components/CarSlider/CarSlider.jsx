@@ -6,8 +6,8 @@ import {
 } from './CarSlider.styled';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAdverts } from 'redux/operations';
-import { getAdverts } from 'redux/selectors';
+import { fetchAdverts } from 'redux/adverts/operations';
+import { getAdverts } from 'redux/adverts/selectors';
 
 const CarSlider = () => {
   const dispatch = useDispatch();

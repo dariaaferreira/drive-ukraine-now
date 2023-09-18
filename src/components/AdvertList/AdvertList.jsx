@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAdverts } from '../../redux/operations';
-import { getAdverts } from '../../redux/selectors';
+import { fetchAdverts } from '../../redux/adverts/operations';
+import { getAdverts } from '../../redux/adverts/selectors';
 import { Container, ListItems, LoadMoreButton } from './AdvertList.styled';
 import AdvertListItem from '../AdvertListItem/AdvertListItem';
 import Loader from '../Loader/Loader';
