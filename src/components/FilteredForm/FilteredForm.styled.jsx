@@ -35,6 +35,17 @@ export const InputLeft = styled.input`
   border-right: 1px solid rgba(138, 138, 137, 0.2);
   background-color: rgba(247, 247, 251, 1);
   border-radius: 14px 0 0 14px;
+  padding-left: 20px;
+
+  font-family: ManropeMedium;
+  color: rgba(18, 20, 23, 1);
+  font-size: 18px;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    height: 48px;
+    width: 48px;
+  }
 `;
 
 export const InputRight = styled.input`
@@ -43,6 +54,17 @@ export const InputRight = styled.input`
   border: none;
   background-color: rgba(247, 247, 251, 1);
   border-radius: 0 14px 14px 0;
+  padding-left: 20px;
+
+  font-family: ManropeMedium;
+  color: rgba(18, 20, 23, 1);
+  font-size: 18px;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    height: 48px;
+    width: 48px;
+  }
 `;
 
 export const Button = styled.button`
@@ -53,7 +75,6 @@ export const Button = styled.button`
   padding: 14px 44px;
   color: white;
   margin-top: 20px;
-  ${'' /* margin-left: 10px; */}
 
   &:hover, &:focus {
   background-color: rgba(11, 68, 205, 1);

@@ -50,7 +50,7 @@ const FilteredForm = ({
 
   const makeOptions = makes.map((make) => ({ value: make, label: make }));
   const priceOptions = prices.map((price) => ({ value: price, label: price }));
-
+  
   return (
     <Container>
       <SelectContainer>
@@ -60,7 +60,7 @@ const FilteredForm = ({
           id="nameSelect"
           placeholder="Enter the text"
           value={selectedMake} 
-          onChange={(selectedOption) => setSelectedMake(selectedOption.value)} 
+          onChange={(selectedOption) => setSelectedMake(selectedOption)} 
           options={makeOptions}
           styles={{ 
             control: (styles) => ({
@@ -117,7 +117,7 @@ const FilteredForm = ({
           value={selectedPrice} 
           onChange={(selectedOption) => {
             setSelectedPrice(selectedOption); 
-            const selectedPriceRange = priceRanges.find((range) => range <= selectedOption.value);
+            const selectedPriceRange = priceRanges.find((range) => range <= selectedOption);
             setSelectedPriceRange(selectedPriceRange);
           }}
           options={priceOptions}
@@ -175,7 +175,7 @@ const FilteredForm = ({
             type="number"
             placeholder="From"
             min={minMileageRounded}
-            max={maxMileageRounded}
+            max={maxMileageRounded - 100}
             step={100}
             value={minValue}
             onChange={handleMinInputChange}
@@ -183,7 +183,7 @@ const FilteredForm = ({
           <InputRight
             type="number"
             placeholder="To"
-            min={minMileageRounded}
+            min={minMileageRounded + 100}
             max={maxMileageRounded}
             step={100}
             value={maxValue}

@@ -25,12 +25,12 @@ const Catalog = () => {
 
   useEffect(() => {
     const filteredAdverts = allAdverts.filter((advert) => {
-      if (filters.make && advert.make !== filters.make) {
+      if (filters.make && advert.make !== filters.make.value) {
         return false;
       }
       if (
         filters.price &&
-        parseFloat(advert.rentalPrice.replace('$', '')) !== parseFloat(filters.price)
+        parseFloat(advert.rentalPrice.replace('$', '')) !== parseFloat(filters.price.value)
       ) {
         return false;
       }
