@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 
 export const ImgContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const Img = styled.img`
@@ -13,6 +13,13 @@ export const Img = styled.img`
   border-radius: 14px;
   object-fit: cover;
   background: rgba(243, 243, 242, 1);
+`;
+
+export const InfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0 10px 40px;
+  gap: 14px;
 `;
 
 export const Title = styled.h3`
@@ -39,13 +46,6 @@ export const Item = styled.li`
   height: 426px;
 `;
 
-export const InfoContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 10px 0 10px 40px;
-  gap: 14px;
-`;
-
 export const AdvDescr = styled.p`
   font-size: 14px;
   line-height: 20px;
@@ -54,7 +54,7 @@ export const AdvDescr = styled.p`
   width: 420px;
 `;
 
-export const FuncDescr = styled.p`
+export const FuncDescr = styled.div`
   font-size: 14px;
   line-height: 20px;
   font-family: ManropeRegular;
@@ -68,7 +68,7 @@ export const ConditionDescr = styled.div`
   gap: 10px;
 `;
 
-export const DescrTitle = styled.h3`
+export const DescrTitle = styled.p`
   display: flex;
   font-size: 14px;
   line-height: 1.5em;
