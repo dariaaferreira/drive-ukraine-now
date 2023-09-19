@@ -27,7 +27,7 @@ const AdvertListItem = ({ advert, index }) => {
     setIsModalOpen(false);
   };
 
-  const shouldDisplaySpan = index < 3; 
+  const shouldDisplaySpan = advert.make.length <= 9 && index < 3;
 
   const addressWords = advert.address.split(' ');
   const lastTwoWords = addressWords.slice(-2).join(' ').replace(',', ' | ');

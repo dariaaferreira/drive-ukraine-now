@@ -20,9 +20,13 @@ const AdvertList = ({ filteredAdverts }) => {
 
   useEffect(() => {
     if (adverts && adverts.length > 0) {
-      setDisplayedAdverts(adverts.slice(0, startIndex + itemsPerPage));
+      if (filteredAdverts && filteredAdverts.length > 0) {
+        setDisplayedAdverts(filteredAdverts.slice(0, startIndex + itemsPerPage));
+      } else {
+        setDisplayedAdverts(adverts.slice(0, startIndex + itemsPerPage));
+      }
     }
-  }, [adverts, startIndex]);
+  }, [adverts, startIndex, filteredAdverts]);
 
   const loadMore = () => {
     setLoading(true);
@@ -35,18 +39,17 @@ const AdvertList = ({ filteredAdverts }) => {
   if (!adverts || adverts.length === 0) {
     return <Loader />;
   }
-  
-  const hasFilteredAdverts = filteredAdverts && filteredAdverts.length > 0;
 
-  const filteredAdvertsCount = hasFilteredAdverts ? filteredAdverts.length : displayedAdverts.length;
-  const shouldShowLoadMoreButton = !loading && filteredAdvertsCount < adverts.length && filteredAdvertsCount >= itemsPerPage;
+  const hasFilteredAdverts = filteredAdverts && filteredAdverts.length > 0;
+  const filteredAdvertsCount = hasFilteredAdverts ? filteredAdverts.length : adverts.length;
+  const shouldShowLoadMoreButton = !loading && startIndex + itemsPerPage < filteredAdvertsCount;
 
   return (
     <Container>
       <ListItems>
         {hasFilteredAdverts
           ? 
-            filteredAdverts.map((advert, index) => (
+            filteredAdverts.slice(0, startIndex + itemsPerPage).map((advert, index) => (
               <AdvertListItem key={advert.id} advert={advert} index={index} />
             ))
           : 

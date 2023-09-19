@@ -43,12 +43,6 @@ export const InputLeft = styled.input`
   font-family: ManropeMedium;
   color: rgba(18, 20, 23, 1);
   font-size: 18px;
-
-  &::-webkit-inner-spin-button,
-  &::-webkit-outer-spin-button {
-    height: 48px;
-    width: 48px;
-  }
 `;
 
 export const InputRight = styled.input`
@@ -64,12 +58,6 @@ export const InputRight = styled.input`
   font-family: ManropeMedium;
   color: rgba(18, 20, 23, 1);
   font-size: 18px;
-
-  &::-webkit-inner-spin-button,
-  &::-webkit-outer-spin-button {
-    height: 48px;
-    width: 48px;
-  }
 `;
 
 export const UnitLeft = styled.span`

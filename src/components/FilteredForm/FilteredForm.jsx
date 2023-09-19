@@ -28,7 +28,6 @@ const FilteredForm = ({
   const formatMileage = (value) => {
     const cleanedValue = value.toString().replace(/,/g, '');
     const formattedValue = cleanedValue.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    // console.log('items: ', formattedValue);
     return formattedValue;
   };  
 
@@ -57,7 +56,6 @@ const FilteredForm = ({
     onFilterChange(newFilters);
   };
   
-
   const makeOptions = makes.map((make) => ({ value: make, label: make }));
   const priceOptions = prices.map((price) => ({ value: price, label: price }));
   
@@ -182,23 +180,18 @@ const FilteredForm = ({
         <InputContainer>
           <InputLeft
             type="text"
-            // placeholder="From"
             value={formatMileage(minValue)}
             onChange={handleMinInputChange}
-            autofocus="autofocus"
           />
           <UnitLeft>From</UnitLeft>
           <InputRight
             type="text"
-            // placeholder="To"
             value={formatMileage(maxValue)}
             onChange={handleMaxInputChange}
-            autofocus="autofocus"
           />
           <UnitRight>To</UnitRight>
         </InputContainer>
       </Form>
-
       <Button onClick={handleFilterClick}>Search</Button>
     </Container>
   );
