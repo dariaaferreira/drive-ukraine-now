@@ -24,27 +24,39 @@ const Catalog = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    const filteredAdverts = allAdverts.filter((advert) => {
-      if (filters.make && advert.make !== filters.make.value) {
-        return false;
-      }
-      if (
-        filters.price &&
-        parseFloat(advert.rentalPrice.replace('$', '')) !== parseFloat(filters.price.value)
-      ) {
-        return false;
-      }
-      if (filters.minMileage && advert.mileage < filters.minMileage) {
-        return false;
-      }
-      if (filters.maxMileage && advert.mileage > filters.maxMileage) {
-        return false;
-      }
-      return true;
-    });
+    if (
+      filters.make ||
+      filters.price ||
+      filters.minMileage ||
+      filters.maxMileage ||
+      filters.priceRange
+    ) {
+      const filteredAdverts = allAdverts.filter((advert) => {
+        if (filters.make && advert.make !== filters.make.value) {
+          return false;
+        }
+        if (
+          filters.price &&
+          parseFloat(advert.rentalPrice.replace('$', '')) !== parseFloat(filters.price.value)
+        ) {
+          return false;
+        }
+        if (filters.minMileage && advert.mileage < filters.minMileage) {
+          return false;
+        }
+        if (filters.maxMileage && advert.mileage > filters.maxMileage) {
+          return false;
+        }
+        return true;
+      });
   
-    setFilteredAdverts(filteredAdverts);
+      setFilteredAdverts(filteredAdverts);
+    } else {
+      
+      setFilteredAdverts([]);
+    }
   }, [filters, allAdverts]);
+  
 
   const makes = [...new Set(allAdverts.map((advert) => advert.make))];
 
@@ -60,7 +72,7 @@ const Catalog = () => {
     priceRanges.push(price);
   }
 
-  // console.log(prices);
+  console.log(filteredAdverts);
 
   return (
     <CatalogContainer>
@@ -73,7 +85,11 @@ const Catalog = () => {
         onFilterChange={(newFilters) => setFilters(newFilters)}
         filters={filters} 
       />
-      <AdvertList filteredAdverts={filteredAdverts} />
+      {filteredAdverts.length > 0 ? (
+        <AdvertList filteredAdverts={filteredAdverts} />
+      ) : (
+        <AdvertList />
+      )}
     </CatalogContainer>
   );
 };

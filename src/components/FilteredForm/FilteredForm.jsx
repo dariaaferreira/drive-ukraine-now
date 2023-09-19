@@ -15,8 +15,6 @@ const FilteredForm = ({
   makes,
   priceRanges,
   prices,
-  minMileage,
-  maxMileage,
   onFilterChange,
 }) => {
   const [selectedMake, setSelectedMake] = useState('');
@@ -25,8 +23,9 @@ const FilteredForm = ({
   const [minValue, setMinValue] = useState('');
   const [maxValue, setMaxValue] = useState('');
 
-  const minMileageRounded = Math.floor(minMileage / 100) * 100;
-  const maxMileageRounded = Math.ceil(maxMileage / 100) * 100;
+  const formatMileage = (value) => {
+    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
 
   const handleMinInputChange = (e) => {
     setMinValue(e.target.value);
@@ -41,8 +40,8 @@ const FilteredForm = ({
       make: selectedMake,
       price: selectedPrice,
       priceRange: selectedPriceRange,
-      minMileage: parseInt(minValue, 10),
-      maxMileage: parseInt(maxValue, 10),
+      minMileage: parseInt(minValue.replace(/,/g, ''), 10),
+      maxMileage: parseInt(maxValue.replace(/,/g, ''), 10),
     };
 
     onFilterChange(newFilters);
@@ -172,21 +171,15 @@ const FilteredForm = ({
         <Label>Car mileage / km</Label> 
         <InputContainer>
           <InputLeft
-            type="number"
+            type="text"
             placeholder="From"
-            min={minMileageRounded}
-            max={maxMileageRounded - 100}
-            step={100}
-            value={minValue}
+            value={formatMileage(minValue)}
             onChange={handleMinInputChange}
           />
           <InputRight
-            type="number"
+            type="text"
             placeholder="To"
-            min={minMileageRounded + 100}
-            max={maxMileageRounded}
-            step={100}
-            value={maxValue}
+            value={formatMileage(maxValue)}
             onChange={handleMaxInputChange}
           />
         </InputContainer>

@@ -32,14 +32,14 @@ const AdvertList = ({ filteredAdverts }) => {
     }, 1000);
   };
 
-  if (loading) {
+  if (!adverts || adverts.length === 0) {
     return <Loader />;
   }
-
+  
   const hasFilteredAdverts = filteredAdverts && filteredAdverts.length > 0;
 
-  // console.log(filteredAdverts);
-  // console.log(displayedAdverts);
+  const filteredAdvertsCount = hasFilteredAdverts ? filteredAdverts.length : displayedAdverts.length;
+  const shouldShowLoadMoreButton = !loading && filteredAdvertsCount < adverts.length && filteredAdvertsCount >= itemsPerPage;
 
   return (
     <Container>
@@ -54,8 +54,12 @@ const AdvertList = ({ filteredAdverts }) => {
               <AdvertListItem key={advert.id} advert={advert} index={index} />
             ))}
       </ListItems>
-      {!loading && displayedAdverts.length < adverts.length && (
-        <LoadMoreButton onClick={loadMore}>Load more</LoadMoreButton>
+      {loading ? (
+        <Loader />
+      ) : (
+        shouldShowLoadMoreButton && (
+          <LoadMoreButton onClick={loadMore}>Load more</LoadMoreButton>
+        )
       )}
     </Container>
   );
