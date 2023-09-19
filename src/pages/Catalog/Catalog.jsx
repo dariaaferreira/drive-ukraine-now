@@ -72,18 +72,10 @@ const Catalog = () => {
   };
 
   const makes = [...new Set(allAdverts.map((advert) => advert.make))];
-
+  const prices = [...new Set(allAdverts.map((advert) => advert.rentalPrice.replace('$', '')))];
   const mileage = [...new Set(allAdverts.map((advert) => advert.mileage))];
   const minMileage = Math.min(...mileage);
-  const maxMileage = Math.max(...mileage);
-
-  const prices = [...new Set(allAdverts.map((advert) => advert.rentalPrice.replace('$', '')))];
-
-  const priceRanges = [];
-
-  for (let price = 10; price <= 500; price += 10) {
-    priceRanges.push(price);
-  }
+  const maxMileage = Math.max(...mileage);  
 
   return (
     <>
@@ -91,7 +83,6 @@ const Catalog = () => {
       <FilteredForm
         makes={makes}
         prices={prices}
-        priceRanges={priceRanges}
         minMileage={minMileage}
         maxMileage={maxMileage}
         onFilterChange={(newFilters) => {

@@ -15,15 +15,17 @@ import {
 
 const FilteredForm = ({
   makes,
-  priceRanges,
   prices,
   onFilterChange,
 }) => {
   const [selectedMake, setSelectedMake] = useState('');
-  const [selectedPriceRange, setSelectedPriceRange] = useState('');
   const [selectedPrice, setSelectedPrice] = useState('');
   const [minValue, setMinValue] = useState('');
   const [maxValue, setMaxValue] = useState('');
+
+  const makeOptions = makes.map((make) => ({ value: make, label: make }));
+  const priceOptions = prices.map((price) => ({ value: price, label: price }));
+
 
   const formatMileage = (value) => {
     const cleanedValue = value.toString().replace(/,/g, '');
@@ -48,17 +50,13 @@ const FilteredForm = ({
     const newFilters = {
       make: selectedMake,
       price: selectedPrice,
-      priceRange: selectedPriceRange,
       minMileage: parseInt(minValue.replace(/,/g, ''), 10),
       maxMileage: parseInt(maxValue.replace(/,/g, ''), 10),
     };
   
     onFilterChange(newFilters);
   };
-  
-  const makeOptions = makes.map((make) => ({ value: make, label: make }));
-  const priceOptions = prices.map((price) => ({ value: price, label: price }));
-  
+
   return (
     <Container>
       <SelectContainer>
@@ -120,13 +118,9 @@ const FilteredForm = ({
         <Label htmlFor="priceSelect">Price/ 1 hour</Label>
         <Select
           id="priceSelect"
-          placeholder="To $"
-          value={selectedPrice} 
-          onChange={(selectedOption) => {
-            setSelectedPrice(selectedOption); 
-            const selectedPriceRange = priceRanges.find((range) => range <= selectedOption);
-            setSelectedPriceRange(selectedPriceRange);
-          }}
+          placeholder="To $" 
+          value={selectedPrice}
+          onChange={(selectedOption) => setSelectedPrice(selectedOption)}
           options={priceOptions}
           styles={{ 
             control: (styles) => ({
