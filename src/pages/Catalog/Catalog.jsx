@@ -113,7 +113,7 @@ const Catalog = () => {
         <AdvertList adverts={allAdverts} />
       )}
     </CatalogContainer>
-    {isFiltering && (filteredAdverts === null || filteredAdverts.length === 0) ? null : <Footer />}
+    <Footer/>
     </>
   );
 };
