@@ -13,8 +13,7 @@ const Catalog = () => {
 
   const [filters, setFilters] = useState({
     make: '',
-    price: '', 
-    priceRange: '',
+    filteredPrices: [],
     minMileage: '',
     maxMileage: '',
   });
@@ -29,19 +28,19 @@ const Catalog = () => {
     if (isFiltering) {
       if (
         filters.make ||
-        filters.price ||
+        filters.filteredPrices.length > 0 ||
         filters.minMileage ||
-        filters.maxMileage ||
-        filters.priceRange
+        filters.maxMileage
       ) {
         const filteredAdverts = allAdverts.filter((advert) => {
           if (filters.make && advert.make !== filters.make.value) {
             return false;
           }
           if (
-            filters.price &&
-            parseFloat(advert.rentalPrice.replace('$', '')) !== parseFloat(filters.price.value)
+            filters.filteredPrices.length > 0 &&
+            !filters.filteredPrices.some((priceObj) => priceObj.value === advert.rentalPrice.replace('$', ''))
           ) {
+            // console.log(`Price comparison failed for advert: ${advert.rentalPrice}`);
             return false;
           }
           if (filters.minMileage && advert.mileage < filters.minMileage) {
@@ -52,19 +51,19 @@ const Catalog = () => {
           }
           return true;
         });
-
+  
         setFilteredAdverts(filteredAdverts);
       } else {
-        setFilteredAdverts([]); 
+        setFilteredAdverts([]);
       }
     }
   }, [filters, allAdverts, isFiltering]);
+  
 
   const resetForm = () => {
     setFilters({
       make: '',
-      price: '', 
-      priceRange: '',
+      filteredPrices: [],
       minMileage: '',
       maxMileage: '',
     });
@@ -76,6 +75,8 @@ const Catalog = () => {
   const mileage = [...new Set(allAdverts.map((advert) => advert.mileage))];
   const minMileage = Math.min(...mileage);
   const maxMileage = Math.max(...mileage);  
+  
+  // console.log("filteredAdverts: ", filteredAdverts);
 
   return (
     <>

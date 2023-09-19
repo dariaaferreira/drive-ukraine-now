@@ -19,13 +19,26 @@ const FilteredForm = ({
   onFilterChange,
 }) => {
   const [selectedMake, setSelectedMake] = useState('');
-  const [selectedPrice, setSelectedPrice] = useState('');
+  const [selectedPriceStep, setSelectedPriceStep] = useState(null);
+  const [selectedPriceLabel, setSelectedPriceLabel] = useState('');
   const [minValue, setMinValue] = useState('');
   const [maxValue, setMaxValue] = useState('');
 
   const makeOptions = makes.map((make) => ({ value: make, label: make }));
-  const priceOptions = prices.map((price) => ({ value: price, label: price }));
+  
+  const priceRangeOptions = [];
+  for (let i = 30; i <= 500; i += 10) {
+    priceRangeOptions.push({ value: i, label: `${i}` });
+  }
 
+  const handlePriceStepChange = (selectedOption) => {
+    setSelectedPriceStep(selectedOption.value);
+    setSelectedPriceLabel(selectedOption.label); 
+    // console.log("selectedOption.value: ", selectedOption.value);
+    // console.log("selectedOption: ", selectedOption);
+  };
+
+  const filteredPrices = prices.filter((price) => price <= selectedPriceStep);
 
   const formatMileage = (value) => {
     const cleanedValue = value.toString().replace(/,/g, '');
@@ -49,13 +62,18 @@ const FilteredForm = ({
   
     const newFilters = {
       make: selectedMake,
-      price: selectedPrice,
+      filteredPrices: filteredPrices.map((price) => ({
+        value: price,
+        label: `${price}`,
+      })),
       minMileage: parseInt(minValue.replace(/,/g, ''), 10),
       maxMileage: parseInt(maxValue.replace(/,/g, ''), 10),
     };
   
     onFilterChange(newFilters);
   };
+
+  // console.log("filteredPrices: ", filteredPrices);
 
   return (
     <Container>
@@ -119,9 +137,9 @@ const FilteredForm = ({
         <Select
           id="priceSelect"
           placeholder="To $" 
-          value={selectedPrice}
-          onChange={(selectedOption) => setSelectedPrice(selectedOption)}
-          options={priceOptions}
+          value={selectedPriceStep ? { value: selectedPriceStep, label: selectedPriceLabel } : null} 
+          onChange={handlePriceStepChange} 
+          options={priceRangeOptions}
           styles={{ 
             control: (styles) => ({
               ...styles,
