@@ -6,11 +6,11 @@ export const Container = styled.div`
   flex-wrap: wrap;
   min-height: 65vh;
   grid-gap: 29px;
-  padding-top: 30px;
   padding-bottom: 20px;
   max-width: 1184px;
   margin: 0 auto;
   margin-bottom: 50px;
+  margin-top: 50px;
 `;
 
 export const ImageContainer = styled.div`
