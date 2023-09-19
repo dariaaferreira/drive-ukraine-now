@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/drive-ukraine-now/static/css/main.e6c13ad2.css",
-    "main.js": "/drive-ukraine-now/static/js/main.5d0d4957.js",
+    "main.js": "/drive-ukraine-now/static/js/main.ba576e78.js",
     "static/css/185.ebe2a2d7.chunk.css": "/drive-ukraine-now/static/css/185.ebe2a2d7.chunk.css",
-    "static/js/185.1d5c7d78.chunk.js": "/drive-ukraine-now/static/js/185.1d5c7d78.chunk.js",
-    "static/js/258.f3d1fb6f.chunk.js": "/drive-ukraine-now/static/js/258.f3d1fb6f.chunk.js",
-    "static/js/634.071719ef.chunk.js": "/drive-ukraine-now/static/js/634.071719ef.chunk.js",
+    "static/js/185.a1ff5320.chunk.js": "/drive-ukraine-now/static/js/185.a1ff5320.chunk.js",
+    "static/js/258.459915ad.chunk.js": "/drive-ukraine-now/static/js/258.459915ad.chunk.js",
+    "static/js/634.9695b1c7.chunk.js": "/drive-ukraine-now/static/js/634.9695b1c7.chunk.js",
     "static/js/113.c7d26bae.chunk.js": "/drive-ukraine-now/static/js/113.c7d26bae.chunk.js",
     "static/js/598.b0ca510d.chunk.js": "/drive-ukraine-now/static/js/598.b0ca510d.chunk.js",
     "static/js/789.819e5620.chunk.js": "/drive-ukraine-now/static/js/789.819e5620.chunk.js",
@@ -23,17 +23,17 @@
     "index.html": "/drive-ukraine-now/index.html",
     "static/media/icon.svg": "/drive-ukraine-now/static/media/icon.e6aef420dab2877eaa3255f37619c5e3.svg",
     "main.e6c13ad2.css.map": "/drive-ukraine-now/static/css/main.e6c13ad2.css.map",
-    "main.5d0d4957.js.map": "/drive-ukraine-now/static/js/main.5d0d4957.js.map",
+    "main.ba576e78.js.map": "/drive-ukraine-now/static/js/main.ba576e78.js.map",
     "185.ebe2a2d7.chunk.css.map": "/drive-ukraine-now/static/css/185.ebe2a2d7.chunk.css.map",
-    "185.1d5c7d78.chunk.js.map": "/drive-ukraine-now/static/js/185.1d5c7d78.chunk.js.map",
-    "258.f3d1fb6f.chunk.js.map": "/drive-ukraine-now/static/js/258.f3d1fb6f.chunk.js.map",
-    "634.071719ef.chunk.js.map": "/drive-ukraine-now/static/js/634.071719ef.chunk.js.map",
+    "185.a1ff5320.chunk.js.map": "/drive-ukraine-now/static/js/185.a1ff5320.chunk.js.map",
+    "258.459915ad.chunk.js.map": "/drive-ukraine-now/static/js/258.459915ad.chunk.js.map",
+    "634.9695b1c7.chunk.js.map": "/drive-ukraine-now/static/js/634.9695b1c7.chunk.js.map",
     "113.c7d26bae.chunk.js.map": "/drive-ukraine-now/static/js/113.c7d26bae.chunk.js.map",
     "598.b0ca510d.chunk.js.map": "/drive-ukraine-now/static/js/598.b0ca510d.chunk.js.map",
     "789.819e5620.chunk.js.map": "/drive-ukraine-now/static/js/789.819e5620.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.5d0d4957.js"
+    "static/js/main.ba576e78.js"
   ]
 }
