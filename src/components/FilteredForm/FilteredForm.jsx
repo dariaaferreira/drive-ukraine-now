@@ -8,7 +8,9 @@ import {
   InputLeft, 
   InputRight, 
   Label,
-  SelectContainer, 
+  SelectContainer,
+  UnitLeft,
+  UnitRight, 
 } from './FilteredForm.styled';
 
 const FilteredForm = ({
@@ -24,8 +26,11 @@ const FilteredForm = ({
   const [maxValue, setMaxValue] = useState('');
 
   const formatMileage = (value) => {
-    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  };
+    const cleanedValue = value.toString().replace(/,/g, '');
+    const formattedValue = cleanedValue.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    // console.log('items: ', formattedValue);
+    return formattedValue;
+  };  
 
   const handleMinInputChange = (e) => {
     setMinValue(e.target.value);
@@ -36,6 +41,11 @@ const FilteredForm = ({
   };
 
   const handleFilterClick = () => {
+    if (parseInt(minValue.replace(/,/g, ''), 10) > parseInt(maxValue.replace(/,/g, ''), 10)) {
+      alert('Minimum mileage cannot be greater than maximum mileage');
+      return; 
+    }
+  
     const newFilters = {
       make: selectedMake,
       price: selectedPrice,
@@ -43,9 +53,10 @@ const FilteredForm = ({
       minMileage: parseInt(minValue.replace(/,/g, ''), 10),
       maxMileage: parseInt(maxValue.replace(/,/g, ''), 10),
     };
-
+  
     onFilterChange(newFilters);
   };
+  
 
   const makeOptions = makes.map((make) => ({ value: make, label: make }));
   const priceOptions = prices.map((price) => ({ value: price, label: price }));
@@ -54,7 +65,6 @@ const FilteredForm = ({
     <Container>
       <SelectContainer>
         <Label htmlFor="nameSelect">Car brand</Label>
-        
         <Select
           id="nameSelect"
           placeholder="Enter the text"
@@ -172,16 +182,20 @@ const FilteredForm = ({
         <InputContainer>
           <InputLeft
             type="text"
-            placeholder="From"
+            // placeholder="From"
             value={formatMileage(minValue)}
             onChange={handleMinInputChange}
+            autofocus="autofocus"
           />
+          <UnitLeft>From</UnitLeft>
           <InputRight
             type="text"
-            placeholder="To"
+            // placeholder="To"
             value={formatMileage(maxValue)}
             onChange={handleMaxInputChange}
+            autofocus="autofocus"
           />
+          <UnitRight>To</UnitRight>
         </InputContainer>
       </Form>
 

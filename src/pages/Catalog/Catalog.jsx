@@ -71,8 +71,8 @@ const Catalog = () => {
   for (let price = 10; price <= 500; price += 10) {
     priceRanges.push(price);
   }
-
-  console.log(filteredAdverts);
+  
+  // console.log(filteredAdverts);
 
   return (
     <CatalogContainer>
