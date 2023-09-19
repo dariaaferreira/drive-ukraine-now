@@ -11,8 +11,6 @@ export const HeartIcon = styled(Icon)`
   right: 10px;
   font-size: 24px;
   cursor: pointer;
-  fill: ${({ isFavorite }) => (isFavorite ? 'rgba(52, 112, 255, 1)' : 'transparent')};
-  stroke: ${({ isFavorite }) => (isFavorite ? 'rgba(52, 112, 255, 1)' : 'white')};
   stroke-width: 1.5;
   stroke-opacity: 0.8; 
   stroke-linecap: round; 

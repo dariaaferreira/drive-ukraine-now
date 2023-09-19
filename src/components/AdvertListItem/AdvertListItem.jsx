@@ -58,8 +58,8 @@ const AdvertListItem = ({ advert, index }) => {
         <Img src={advert.img} alt={advert.make} />
         <HeartIcon
           onClick={toggleFavorite}
-          isFavorite={isFavorite}
-
+          fill={isFavorite ? 'rgba(52, 112, 255, 1)' : 'transparent'} 
+          stroke={isFavorite ? 'rgba(52, 112, 255, 1)' : 'white'}
         />
       </ImageContainer>
       
