@@ -20,10 +20,16 @@ const Modal = ({ isOpen, onClose, children, id, advert }) => {
     };
   }, [isOpen, onClose]);
 
+  const handleOverlayClick = (event) => {
+    if (event.target === event.currentTarget) {
+      onClose();
+    }
+  };
+
   if (!isOpen || id !== advert.id) return null;
 
   return ReactDOM.createPortal(
-    <Overlay onClick={onClose}>
+    <Overlay onClick={handleOverlayClick}>
       <ModalContainer>
         <ModalClose onClick={onClose}>✕</ModalClose>
         <CarInfo advert={advert}/>
