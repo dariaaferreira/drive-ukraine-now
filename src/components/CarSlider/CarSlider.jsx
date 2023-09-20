@@ -5,6 +5,8 @@ import 'slick-carousel/slick/slick-theme.css';
 import {
   Img,
   SliderWrapper,
+  Span,
+  Title,
 } from './CarSlider.styled';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -38,6 +40,9 @@ const CarSlider = () => {
       {adverts.map(advert => (
       <SliderWrapper key={advert.id}>
         <Img src={advert.img} alt={`Slide ${advert.make}`} />
+        <Title>
+          {advert.make} <Span> {advert.model}</Span>, {advert.year}
+        </Title>
       </SliderWrapper>
         ))}
     </Slider>

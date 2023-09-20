@@ -24,3 +24,15 @@ export const SliderWrapper = styled.div`
   padding: 24px 20px;
   margin-bottom: 8px;
 `;
+
+export const Title = styled.p`
+  font-family: ManropeRegular;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex; 
+`;
+
+export const Span = styled.span`
+  color: rgba(52, 112, 255, 1);
+  margin-left: 6px;
+`;
