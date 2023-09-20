@@ -9,7 +9,6 @@ export const Container = styled.div`
   max-width: 1184px;
   margin: 0 auto;
   margin-bottom: 50px;
-  margin-top: 50px;
 `;
 
 export const EmptyFavorites = styled.div`
