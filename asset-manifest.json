@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/drive-ukraine-now/static/css/main.e6c13ad2.css",
-    "main.js": "/drive-ukraine-now/static/js/main.3bb76a0a.js",
+    "main.js": "/drive-ukraine-now/static/js/main.36a560df.js",
     "static/css/185.ebe2a2d7.chunk.css": "/drive-ukraine-now/static/css/185.ebe2a2d7.chunk.css",
-    "static/js/185.34dd34d2.chunk.js": "/drive-ukraine-now/static/js/185.34dd34d2.chunk.js",
+    "static/js/185.c0d1f34b.chunk.js": "/drive-ukraine-now/static/js/185.c0d1f34b.chunk.js",
     "static/js/258.aa3402d8.chunk.js": "/drive-ukraine-now/static/js/258.aa3402d8.chunk.js",
     "static/js/634.c2428635.chunk.js": "/drive-ukraine-now/static/js/634.c2428635.chunk.js",
     "static/js/85.e7422eec.chunk.js": "/drive-ukraine-now/static/js/85.e7422eec.chunk.js",
@@ -25,9 +25,9 @@
     "index.html": "/drive-ukraine-now/index.html",
     "static/media/icon.svg": "/drive-ukraine-now/static/media/icon.8f1d764831de035a427c28e1ac42c052.svg",
     "main.e6c13ad2.css.map": "/drive-ukraine-now/static/css/main.e6c13ad2.css.map",
-    "main.3bb76a0a.js.map": "/drive-ukraine-now/static/js/main.3bb76a0a.js.map",
+    "main.36a560df.js.map": "/drive-ukraine-now/static/js/main.36a560df.js.map",
     "185.ebe2a2d7.chunk.css.map": "/drive-ukraine-now/static/css/185.ebe2a2d7.chunk.css.map",
-    "185.34dd34d2.chunk.js.map": "/drive-ukraine-now/static/js/185.34dd34d2.chunk.js.map",
+    "185.c0d1f34b.chunk.js.map": "/drive-ukraine-now/static/js/185.c0d1f34b.chunk.js.map",
     "258.aa3402d8.chunk.js.map": "/drive-ukraine-now/static/js/258.aa3402d8.chunk.js.map",
     "634.c2428635.chunk.js.map": "/drive-ukraine-now/static/js/634.c2428635.chunk.js.map",
     "85.e7422eec.chunk.js.map": "/drive-ukraine-now/static/js/85.e7422eec.chunk.js.map",
@@ -38,6 +38,6 @@
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.3bb76a0a.js"
+    "static/js/main.36a560df.js"
   ]
 }
