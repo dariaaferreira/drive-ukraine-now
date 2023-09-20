@@ -11,6 +11,10 @@ export const Container = styled.div`
   margin-bottom: 50px;
 `;
 
+export const FilteredContainer = styled.div`
+  margin: 0 auto;
+`;
+
 export const EmptyFavorites = styled.div`
   display: flex;
   align-items: center;

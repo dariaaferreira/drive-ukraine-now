@@ -1,6 +1,6 @@
 import AdvertListItem from 'components/AdvertListItem/AdvertListItem';
 import React, { useEffect, useState } from 'react';
-import { Container, EmptyFavorites, EmptyFavoritesMessage } from './Favorites.styled';
+import { Container, EmptyFavorites, EmptyFavoritesMessage, FilteredContainer } from './Favorites.styled';
 import { useSelector } from 'react-redux';
 import Footer from 'components/Footer/Footer';
 import { ToastContainer } from 'react-toastify';
@@ -64,17 +64,19 @@ const Favorites = () => {
   return (
     <>
       <Container>
-        <FilteredForm
-          makes={makes}
-          prices={prices}
-          minMileage={minMileage}
-          maxMileage={maxMileage}
-          onFilterChange={(newFilters) => {
-            setFilters(newFilters);
-            setIsFiltering(true);
-          }}
-          filters={filters}
-        />
+        <FilteredContainer>
+          <FilteredForm
+            makes={makes}
+            prices={prices}
+            minMileage={minMileage}
+            maxMileage={maxMileage}
+            onFilterChange={(newFilters) => {
+              setFilters(newFilters);
+              setIsFiltering(true);
+            }}
+            filters={filters}
+          />
+        </FilteredContainer>
         {favorites.length === 0 ? (
           <EmptyFavorites>
             <EmptyFavoritesMessage>Your favorites list is empty.</EmptyFavoritesMessage>
