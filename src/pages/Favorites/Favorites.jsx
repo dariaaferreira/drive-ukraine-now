@@ -19,8 +19,6 @@ const Favorites = () => {
   const [filteredAdverts, setFilteredAdverts] = useState(null);
   const [isFiltering, setIsFiltering] = useState(false);
 
-  console.log("favorites: ", favorites);
-
   useEffect(() => {
     if (isFiltering) {
       if (
@@ -63,9 +61,6 @@ const Favorites = () => {
   const minMileage = Math.min(...mileage);
   const maxMileage = Math.max(...mileage);
 
-  console.log("favorites:", favorites);
-console.log("filteredAdverts:", filteredAdverts);
-
   return (
     <>
       <Container>
@@ -81,29 +76,28 @@ console.log("filteredAdverts:", filteredAdverts);
           filters={filters}
         />
         {favorites.length === 0 ? (
-  <EmptyFavorites>
-    <EmptyFavoritesMessage>Your favorites list is empty.</EmptyFavoritesMessage>
-  </EmptyFavorites>
-) : (
-  <>
-    {isFiltering ? (
-      filteredAdverts !== null && filteredAdverts.length > 0 ? (
-        <AdvertList filteredAdverts={filteredAdverts} /> 
-      ) : (
-        <EmptyFavorites>
-          <EmptyFavoritesMessage>No matching favorites found.</EmptyFavoritesMessage>
-        </EmptyFavorites>
-      )
-    ) : (
-      favorites.map((advert, index) => (
-        <div key={advert.id}>
-          <AdvertListItem advert={advert} index={index} />
-        </div>
-      ))
-    )}
-  </>
-)}
-
+          <EmptyFavorites>
+            <EmptyFavoritesMessage>Your favorites list is empty.</EmptyFavoritesMessage>
+          </EmptyFavorites>
+        ) : (
+          <>
+            {isFiltering ? (
+              filteredAdverts !== null && filteredAdverts.length > 0 ? (
+                <AdvertList filteredAdverts={filteredAdverts} /> 
+              ) : (
+                <EmptyFavorites>
+                  <EmptyFavoritesMessage>No matching favorites found.</EmptyFavoritesMessage>
+                </EmptyFavorites>
+              )
+            ) : (
+              favorites.map((advert, index) => (
+                <div key={advert.id}>
+                  <AdvertListItem advert={advert} index={index} />
+                </div>
+              ))
+            )}
+          </>
+        )}
       </Container>
       <ToastContainer />
       <Footer />
