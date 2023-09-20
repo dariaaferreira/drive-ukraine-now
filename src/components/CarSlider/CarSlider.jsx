@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import {
   Img,
   SliderWrapper,
-  CarouselSlider,
 } from './CarSlider.styled';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -18,19 +20,28 @@ const CarSlider = () => {
   }, [dispatch]);
 
   const sliderSettings = {
+    speed: 500,
+    infinite: true,
     slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
     adaptiveHeight: true,
     variableWidth: true,
+    arrows: true,
   };
 
   return (
-    <CarouselSlider {...sliderSettings}>
-      {adverts.slice(25, 38).map(advert => (
+    <div style={{ width: '1120px' }}>
+      <Slider {...sliderSettings}>
+      {adverts.map(advert => (
       <SliderWrapper key={advert.id}>
         <Img src={advert.img} alt={`Slide ${advert.make}`} />
       </SliderWrapper>
         ))}
-    </CarouselSlider>
+    </Slider>
+    </div>
   );
 };
 

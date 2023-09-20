@@ -1,7 +1,4 @@
 import styled from '@emotion/styled';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 export const Img = styled.img`
   width: 335px;
@@ -15,10 +12,6 @@ export const Img = styled.img`
   &:focus {
     transform: scale(0.9);
   }
-`;
-
-export const CarouselSlider = styled(Slider)`
-  width: 1140px;
 `;
 
 export const SliderWrapper = styled.div`
