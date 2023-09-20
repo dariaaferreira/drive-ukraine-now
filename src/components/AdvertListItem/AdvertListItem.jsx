@@ -19,6 +19,7 @@ import { addToFavorites, removeFromFavorites } from 'redux/favorites/slice';
 const AdvertListItem = ({ advert, index }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
+  const dispatch = useDispatch();
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -34,8 +35,6 @@ const AdvertListItem = ({ advert, index }) => {
   const lastTwoWords = addressWords.slice(-2).join(' ').replace(',', ' | ');
 
   const firstFunctionality = advert.functionalities[0];
-
-  const dispatch = useDispatch();
   
   const favorites = useSelector((state) => state.favorites.favorites);
 

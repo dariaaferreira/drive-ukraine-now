@@ -79,12 +79,6 @@ const FilteredForm = ({
     setSelectedPriceLabel('');
     setMinValue('');
     setMaxValue('');
-    onFilterChange({
-      make: '',
-      filteredPrices: [],
-      minMileage: '',
-      maxMileage: '',
-    });
   };
 
   return (
