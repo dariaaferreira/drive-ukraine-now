@@ -3,6 +3,7 @@ import React from 'react';
 import { Container, EmptyFavorites, EmptyFavoritesMessage } from './Favorites.styled';
 import { useSelector } from 'react-redux';
 import Footer from 'components/Footer/Footer';
+import { ToastContainer } from 'react-toastify';
 
 const Favorites = () => {
   const favorites = useSelector((state) => state.favorites.favorites);
@@ -22,6 +23,7 @@ const Favorites = () => {
           ))
         )}
       </Container>
+      <ToastContainer/>
       <Footer />
     </>
   );

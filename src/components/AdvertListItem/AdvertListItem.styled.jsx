@@ -56,10 +56,13 @@ export const Img = styled.img`
 
 export const DescrContainer = styled.div`
   display: flex;
+  width: 255px;
+  height: 40px;
+  overflow: hidden;
 `;
 
-export const Descr = styled.h4`
-  display: flex;
+export const Descr = styled.p`
+  width: 270px;
   font-size: 12px;
   line-height: 1.5em;
   font-family: ManropeThin;

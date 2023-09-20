@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Select from 'react-select'; 
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
   Button, 
   Container, 
@@ -34,8 +36,6 @@ const FilteredForm = ({
   const handlePriceStepChange = (selectedOption) => {
     setSelectedPriceStep(selectedOption.value);
     setSelectedPriceLabel(selectedOption.label); 
-    // console.log("selectedOption.value: ", selectedOption.value);
-    // console.log("selectedOption: ", selectedOption);
   };
 
   const filteredPrices = prices.filter((price) => price <= selectedPriceStep);
@@ -56,10 +56,10 @@ const FilteredForm = ({
 
   const handleFilterClick = () => {
     if (parseInt(minValue.replace(/,/g, ''), 10) > parseInt(maxValue.replace(/,/g, ''), 10)) {
-      alert('Minimum mileage cannot be greater than maximum mileage');
+      toast.error('Minimum mileage cannot be greater than maximum mileage');
       return; 
     }
-  
+      
     const newFilters = {
       make: selectedMake,
       filteredPrices: filteredPrices.map((price) => ({
@@ -73,7 +73,19 @@ const FilteredForm = ({
     onFilterChange(newFilters);
   };
 
-  // console.log("filteredPrices: ", filteredPrices);
+  const handleResetClick = () => {
+    setSelectedMake('');
+    setSelectedPriceStep(null);
+    setSelectedPriceLabel('');
+    setMinValue('');
+    setMaxValue('');
+    onFilterChange({
+      make: '',
+      filteredPrices: [],
+      minMileage: '',
+      maxMileage: '',
+    });
+  };
 
   return (
     <Container>
@@ -99,12 +111,12 @@ const FilteredForm = ({
               backgroundColor: 'rgba(247, 247, 251, 1)',
               appearance: 'none',
             }),
-            option: (styles) => {
+            option: (styles, { isFocused }) => {
               return {
               ...styles,
-              color: 'rgba(18, 20, 23, 0.2)',
+              color: isFocused ? 'black' : 'rgba(18, 20, 23, 0.2)',
               fontFamily: 'ManropeMedium',
-            };
+              };
             },
             menuList: (base) => ({
               ...base,
@@ -154,12 +166,12 @@ const FilteredForm = ({
               backgroundColor: 'rgba(247, 247, 251, 1)',
               appearance: 'none',
             }),
-            option: (styles) => {
+            option: (styles, { isFocused }) => {
               return {
               ...styles,
-              color: 'rgba(18, 20, 23, 0.2)',
+              color: isFocused ? 'black' : 'rgba(18, 20, 23, 0.2)',
               fontFamily: 'ManropeMedium',
-            };
+              };
             },
             menuList: (base) => ({
               ...base,
@@ -205,6 +217,7 @@ const FilteredForm = ({
         </InputContainer>
       </Form>
       <Button onClick={handleFilterClick}>Search</Button>
+      <Button onClick={handleResetClick}>Reset</Button>
     </Container>
   );
 };

@@ -14,7 +14,8 @@ import { SpanUnit,
   Title, 
   Button, 
   ButtonLink,
-  FuncDescr
+  FuncDescr,
+  DescrFunc
 } from './CarInfo.styled';
 
 const CarInfo = ({ advert }) => {
@@ -55,7 +56,8 @@ const CarInfo = ({ advert }) => {
 
         <DescrContainer>
           <Descr>
-            {lastTwoWords} | Id: {advert.id} | Year: {advert.year} | Type: {advert.type}  Fuel Consumption: {advert.fuelConsumption} | Engine Size: {advert.engineSize} 
+            <p>{lastTwoWords} | Id: {advert.id} | Year: {advert.year} | Type: {advert.type}</p>  
+            <p>Fuel Consumption: {advert.fuelConsumption} | Engine Size: {advert.engineSize}</p>
           </Descr>
         </DescrContainer>
 
@@ -63,9 +65,22 @@ const CarInfo = ({ advert }) => {
 
         <FuncDescr>
           <DescrTitle>Accessories and functionalities:</DescrTitle>
-            <Descr>
-              {advert.accessories.join(" | ")} | {advert.functionalities.join(" | ")}
-          </Descr>
+            <DescrFunc>
+              <p>
+                {advert.accessories.map((accessory) => {
+                  const words = accessory.split(" ");
+                  const firstThreeWords = words.slice(0, 3).join(" ");
+                  return firstThreeWords;
+                }).join(" | ")}
+              </p>
+              <p>
+                {advert.functionalities.map((functionality) => {
+                  const words = functionality.split(" ");
+                  const firstThreeWords = words.slice(0, 3).join(" ");
+                  return firstThreeWords;
+                }).join(" | ")}
+              </p>
+          </DescrFunc>
         </FuncDescr>
         
         <ConditionContainer>

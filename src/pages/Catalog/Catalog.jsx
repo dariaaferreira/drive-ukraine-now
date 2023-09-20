@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAdverts } from 'redux/adverts/selectors';
 import { fetchAdverts } from 'redux/adverts/operations';
 import Footer from 'components/Footer/Footer';
+import { ToastContainer } from 'react-toastify';
 
 const Catalog = () => {
   const dispatch = useDispatch();
@@ -40,7 +41,6 @@ const Catalog = () => {
             filters.filteredPrices.length > 0 &&
             !filters.filteredPrices.some((priceObj) => priceObj.value === advert.rentalPrice.replace('$', ''))
           ) {
-            // console.log(`Price comparison failed for advert: ${advert.rentalPrice}`);
             return false;
           }
           if (filters.minMileage && advert.mileage < filters.minMileage) {
@@ -75,8 +75,6 @@ const Catalog = () => {
   const mileage = [...new Set(allAdverts.map((advert) => advert.mileage))];
   const minMileage = Math.min(...mileage);
   const maxMileage = Math.max(...mileage);  
-  
-  // console.log("filteredAdverts: ", filteredAdverts);
 
   return (
     <>
@@ -98,13 +96,14 @@ const Catalog = () => {
         ) : (
           <>
             <ResultMessage>No results found for the selected criteria.</ResultMessage>
-            <Button onClick={resetForm}>Reset form</Button> 
+            <Button onClick={resetForm}>Reset list</Button> 
           </>
         )
       ) : (
         <AdvertList adverts={allAdverts} />
       )}
     </CatalogContainer>
+    <ToastContainer/>
     <Footer/>
     </>
   );

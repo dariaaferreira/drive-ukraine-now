@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import { HeartIcon, 
   Button, 
   Descr, 
@@ -46,8 +47,10 @@ const AdvertListItem = ({ advert, index }) => {
   const toggleFavorite = () => {
     if (isFavorite) {
       dispatch(removeFromFavorites(advert.id));
+      toast.warning('Ad removed from favorites.');
     } else {
       dispatch(addToFavorites(advert));
+      toast.success('Ad added to favorites.');
     }
     setIsFavorite(!isFavorite);
   };

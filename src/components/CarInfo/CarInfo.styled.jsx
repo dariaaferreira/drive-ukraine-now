@@ -51,7 +51,7 @@ export const AdvDescr = styled.p`
   line-height: 20px;
   font-family: ManropeRegular;
   font-weight: 400;
-  width: 420px;
+  width: 450px;
 `;
 
 export const FuncDescr = styled.div`
@@ -59,7 +59,6 @@ export const FuncDescr = styled.div`
   line-height: 20px;
   font-family: ManropeRegular;
   font-weight: 400;
-  width: 350px;
 `;
 
 export const ConditionDescr = styled.div`
@@ -75,12 +74,12 @@ export const DescrTitle = styled.p`
   font-family: ManropeMedium;
   font-weight: 500;
   color: rgba(18, 20, 23, 1);
+  margin-bottom: 8px;
 `;
 
 export const DescrContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 277px;
 `;
 
 export const ConditionalDescr = styled.div`
@@ -113,11 +112,24 @@ export const SpanUnit= styled.span`
 
 export const Descr = styled.p`
   display: flex;
+  flex-direction: column;
   font-size: 12px;
   line-height: 1.5em;
   font-family: MontserratRegular;
   color: rgba(18, 20, 23, 0.5);
-  letter-spacing: -0.2px
+`;
+
+export const DescrFunc = styled.p`
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  line-height: 1.5em;
+  font-family: MontserratRegular;
+  color: rgba(18, 20, 23, 0.5);
+  margin-top: 8px;
+  width: 480px;
+  height: 40px;
+  overflow: hidden;
 `;
 
 export const Button = styled.button`

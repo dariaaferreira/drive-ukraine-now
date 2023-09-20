@@ -25,7 +25,7 @@ const CarSlider = () => {
 
   return (
     <CarouselSlider {...sliderSettings}>
-      {adverts.slice(15, 18).map(advert => (
+      {adverts.slice(25, 38).map(advert => (
       <SliderWrapper key={advert.id}>
         <Img src={advert.img} alt={`Slide ${advert.make}`} />
       </SliderWrapper>
