@@ -19,6 +19,7 @@ const FilteredForm = ({
   makes,
   prices,
   onFilterChange,
+  onResetClick,
 }) => {
   const [selectedMake, setSelectedMake] = useState('');
   const [selectedPriceStep, setSelectedPriceStep] = useState(null);
@@ -79,6 +80,7 @@ const FilteredForm = ({
     setSelectedPriceLabel('');
     setMinValue('');
     setMaxValue('');
+    onResetClick();
   };
 
   return (

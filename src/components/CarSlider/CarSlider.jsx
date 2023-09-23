@@ -39,7 +39,7 @@ const CarSlider = () => {
       <Slider {...sliderSettings}>
       {adverts.map(advert => (
       <SliderWrapper key={advert.id}>
-        <Img src={advert.img} alt={`Slide ${advert.make}`} />
+        <Img src={advert.img} alt={`${advert.make}`} width={335}/>
         <Title>
           {advert.make} <Span> {advert.model}</Span>, {advert.year}
         </Title>

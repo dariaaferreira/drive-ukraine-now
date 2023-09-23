@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, CatalogContainer, ResultMessage } from './Catalog.styled';
+import { CatalogContainer, ResultMessage } from './Catalog.styled';
 import FilteredForm from 'components/FilteredForm/FilteredForm';
 import AdvertList from '../../components/AdvertList/AdvertList';
 import { useDispatch, useSelector } from 'react-redux';
@@ -58,23 +58,22 @@ const Catalog = () => {
       }
     }
   }, [filters, allAdverts, isFiltering]);
-  
-
-  const resetForm = () => {
-    setFilters({
-      make: '',
-      filteredPrices: [],
-      minMileage: '',
-      maxMileage: '',
-    });
-    setIsFiltering(false); 
-  };
 
   const makes = [...new Set(allAdverts.map((advert) => advert.make))];
   const prices = [...new Set(allAdverts.map((advert) => advert.rentalPrice.replace('$', '')))];
   const mileage = [...new Set(allAdverts.map((advert) => advert.mileage))];
   const minMileage = Math.min(...mileage);
   const maxMileage = Math.max(...mileage);  
+
+  const handleResetClick = () => {
+    setFilters({
+      make: '',
+      filteredPrices: [],
+      minMileage: '',
+      maxMileage: '',
+    });
+    setIsFiltering(false);
+  };
 
   return (
     <>
@@ -89,6 +88,7 @@ const Catalog = () => {
           setIsFiltering(true); 
         }}
         filters={filters} 
+        onResetClick={handleResetClick}
       />
       {isFiltering ? (
         filteredAdverts !== null && filteredAdverts.length > 0 ? (
@@ -96,7 +96,6 @@ const Catalog = () => {
         ) : (
           <>
             <ResultMessage>No results found for the selected criteria.</ResultMessage>
-            <Button onClick={resetForm}>Reset list</Button> 
           </>
         )
       ) : (

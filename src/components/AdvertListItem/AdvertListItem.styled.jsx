@@ -65,7 +65,7 @@ export const Descr = styled.p`
   width: 270px;
   font-size: 12px;
   line-height: 1.5em;
-  font-family: ManropeThin;
+  font-family: ManropeRegular;
   color: rgba(18, 20, 23, 0.5);
 `;
 

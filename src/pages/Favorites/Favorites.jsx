@@ -61,6 +61,16 @@ const Favorites = () => {
   const minMileage = Math.min(...mileage);
   const maxMileage = Math.max(...mileage);
 
+  const handleResetClick = () => {
+    setFilters({
+      make: '',
+      filteredPrices: [],
+      minMileage: '',
+      maxMileage: '',
+    });
+    setIsFiltering(false);
+  };
+
   return (
     <>
       <Container>
@@ -75,6 +85,7 @@ const Favorites = () => {
               setIsFiltering(true);
             }}
             filters={filters}
+            onResetClick={handleResetClick}
           />
         </FilteredContainer>
         {favorites.length === 0 ? (

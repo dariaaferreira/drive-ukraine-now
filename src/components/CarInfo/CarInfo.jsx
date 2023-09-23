@@ -46,7 +46,7 @@ const CarInfo = ({ advert }) => {
   return (
     <>
       <ImgContainer>
-        <Img src={advert.img} alt={advert.make} />
+        <Img src={advert.img} alt={advert.make} width={461} />
       </ImgContainer>
 
       <InfoContainer>

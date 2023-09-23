@@ -57,7 +57,7 @@ const AdvertListItem = ({ advert, index }) => {
   return (
     <Item>
       <ImageContainer>
-        <Img src={advert.img} alt={advert.make} />
+        <Img src={advert.img} alt={advert.make} width={274}/>
         <HeartIcon
           onClick={toggleFavorite}
           fill={isFavorite ? 'rgba(52, 112, 255, 1)' : 'transparent'} 
